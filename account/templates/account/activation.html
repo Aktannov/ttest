@@ -1,0 +1,17 @@
+{% extends 'product/layout.html' %}
+
+{% block title %}Активация{% endblock %}
+
+{% block content %}
+    <p>Активация аккаунта</p>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.code }}<br><br>
+        <button type="submit" class="btn btn-success">Активировать</button><br><br>
+        {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+                {{ error }}
+            {% endfor %}
+        {% endif %}
+    </form>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'product/layout.html' %}
+
+{% block title %}Поздравляем{% endblock %}
+
+{% block content %}
+    <span><b>Поздравляем с успешной регистрацией!</b></span><br>
+    <span><b><a href="{% url 'login' %}">Войти в аккаунт</a></b></span>
+{% endblock %}

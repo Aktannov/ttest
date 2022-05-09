@@ -1,0 +1,16 @@
+{% extends 'product/layout.html' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+    {% for el in announcements %}
+        {{ el.title }}
+        {{ el.text }}
+        {{ el.price }}
+        {{ el.category }}
+        {{ el.author }}
+        {{ el.image }}
+        {{ el.condition }}
+        {{ el.delivery }}<br>
+    {% endfor %}
+{% endblock %}
