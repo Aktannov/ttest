@@ -1,0 +1,20 @@
+{% extends 'product/layout.html' %}
+
+{% block title %}Вход{% endblock %}
+
+{% block content %}
+    <span><b>Bebebe</b></span><br>
+    <span><b>Bobobo</b></span>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.phone }}<br><br>
+        {{ form.name }}<br><br>
+        {{ form.password }}<br><br>
+        <button type="submit" class="btn btn-success">Войти</button><br><br>
+        {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+                {{ error }}
+            {% endfor %}
+        {% endif %}
+    </form>
+{% endblock %}

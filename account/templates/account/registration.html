@@ -1,0 +1,21 @@
+{% extends 'product/layout.html' %}
+
+{% block title %}Регистрация{% endblock %}
+
+{% block content %}
+    <p>Регистрация</p>
+    <form method="post">
+        {% csrf_token %}
+            {{ form.name }}<br><br>
+            {{ form.phone }}<br><br>
+            {{ form.password }}<br><br>
+            {{ form.password_confirmation }}<br><br>
+<!--        {{ form.as_p }}-->
+        <button type="submit" class="btn btn-success">Зарегистрироваться</button><br><br>
+        {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+                {{ error }}
+            {% endfor %}
+        {% endif %}
+    </form>
+{% endblock %}

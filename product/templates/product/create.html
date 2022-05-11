@@ -1,0 +1,22 @@
+{% extends 'product/layout.html' %}
+
+{% block title %}Создание обьявления{% endblock %}
+
+{% block content %}
+    <div class="'features">
+        <form enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+<!--            {{ form.title }}<br>-->
+<!--            {{ form.text }}<br>-->
+<!--            {{ form.price }}<br>-->
+<!--            {{ form.category }}<br>-->
+<!--            {{ form.author }}<br>-->
+<!--            {{ form.image }}<br>-->
+<!--            {{ form.condition }}<br>-->
+<!--            {{ form.delivery }}<br>-->
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">Создать обьявление</button>
+
+        </form>
+    </div>
+{% endblock %}
